@@ -1,0 +1,265 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+    color: #444;
+}
+
+p {
+    line-height: 2rem;
+}
+
+.button-collapse {
+    color: #444;;
+}
+
+.parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255, 255, 255, .9);
+}
+
+.parallax-container .section {
+    width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
+    .parallax-container .section {
+        position: absolute;
+        top: 40%;
+    }
+
+    #index-banner .section {
+        top: 10%;
+    }
+}
+
+@media (min-width: 1399px) {
+    .container {
+        width: 70%;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1440px) {
+    .container {
+        width: 82%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #index-banner .section {
+        top: 0;
+    }
+}
+
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+footer.page-footer {
+    margin: 0;
+}
+
+h1, .h1{
+    font-size: 2.2rem;
+    line-height: 110%;
+    margin: 1.1rem 0 1.1rem 0;
+    text-align: center;
+}
+
+h2, .h2{
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 110%;
+    margin: 1.1rem 0 ;
+    text-align: center;
+}
+
+h3, .h3{
+    font-size: 1.6rem;
+    line-height: 110%;
+    margin: 1.1rem 0 ;
+}
+
+
+h6{
+    margin-top: 20px;
+    display: block;
+    text-decoration: underline;
+}
+
+.underline{
+    text-decoration: underline;
+}
+
+.more-link{
+    text-decoration: underline;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+}
+
+.underline:hover, .more-link:hover{
+    text-decoration: none;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+    color: #444;
+}
+
+.full-slider-img {
+    width: 100%;
+}
+
+.caption{
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    margin-top: 5%;
+    font-size: 40px;
+    font-weight: 600;
+}
+.caption.caption-black {
+    color: #000;
+    text-shadow: 1px 1px 10px #fff;
+}
+
+.caption.caption-white {
+    color: #fff;
+    text-shadow: 1px 1px 10px #000;
+}
+
+.phone-icon{
+    vertical-align: middle;
+}
+
+
+.phone{
+    font-weight: 600;
+}
+
+.phone button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+footer .phone{
+    color: #fff;
+}
+
+
+footer h5 a{
+    color: #fff;
+}
+
+footer li {
+    line-height: 2rem;
+}
+
+.main-info{
+    line-height: 1.7rem;
+}
+
+.top-phone{
+    padding-left: 20px;
+}
+.top-phone-icon{
+    display: none;
+}
+
+a[rel=photo_group]{
+    max-height: 100px;
+    position: relative;
+}
+
+a[rel=photo_group] img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.more-photo {
+    margin-top: 20px;
+}
+
+.instructor .col{
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1200px){
+    .main-info{
+        margin: 0;
+    }
+}
+@media (max-width: 1200px){
+    .top-phone{
+        display: none;
+    }
+    .top-phone-icon {
+        display: block;
+        float: right;
+        color: #000;
+        margin-top: 10px;
+    }
+    .top-phone-icon i{
+        line-height: inherit!important;
+        height: auto!important;
+        display: inline-block;
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px){
+    .main-info{
+        margin: 20px 0 0;
+    }
+    .top-phone-icon {
+        margin-top: 8px;
+    }
+    h1{
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin: 0.5rem 0 0;
+    }
+}
+
+ul.advantages>li {
+    margin-left: 15px;
+    list-style-type: circle;
+    line-height: 2rem;
+}
+
+.instructor-name{
+    margin-bottom: 20px;
+}
+
+#materialbox-overlay {
+    background-color: rgba(41, 41, 41, 0.87);
+}
+
+.clearfix{
+    clear: both;
+    margin: 20px;
+}
+
+.instagram {
+    width: 24px;
+}
+
+.valign{
+    vertical-align: middle;
+    margin: 5px 0;
+}
