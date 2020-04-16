@@ -9,6 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use yii\widgets\Menu;
 
 AppAsset::register($this);
 
@@ -92,45 +93,69 @@ AppAsset::register($this);
                     +7&nbsp;928&nbsp;082&nbsp;97&nbsp;01&nbsp;</b></a>
             <a href="tel:+79280829701" class="top-phone-icon btn btn-floating blue pulse"><i class="material-icons">phone</i></a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <!-- Dropdown Structure -->
-            <ul id="dropdown1" class="dropdown-content">
-                <li><a href="/ehkskursiya/golubye-ozera/">Голубые Озера</a></li>
-                <li><a href="/ehkskursiya/">Приэльбрусье</a></li>
-                <li><a href="/ehkskursiya/chegemskie_vodopady/">Чегемские водопады</a></li>
-                <li><a href="/ehkskursiya/habazskie-vodopady/">Хабазские водопады</a></li>
-                <li><a href="/ehkskursiya/dzhyly-suu/">Джилы су</a></li>
-                <li><a href="/ehkskursiya/priehlbruse/">Эльбрус</a></li>
-            </ul>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="/">Инструктор</a></li>
-                <li><a href="#" class="dropdown-button" data-activates="dropdown1">Экскурсии<i
-                                class="material-icons right">arrow_drop_down</i></a></li>
-                <li><a href="/tracking/">Походы/Трекинг</a></li>
-                <li><a href="/taxi/">Такси</a></li>
-                <li><a href="/hotel/">Гостиница</a></li>
-                <li><a href="/prices/">Цены</a></li>
-            </ul>
+            <?
+            echo Menu::widget([
+                    'activeCssClass'=>'active',
+                    'activateItems'=> true, // todo
+                    'options'=>['class'=>'right hide-on-med-and-down'],
+                    'items' => [
+                        ['label' => 'Инструктор', 'url' => ['/']],
+                        ['label' => 'Экскурсии',
+                            'template' => '<a href="{url}" class="dropdown-button" data-activates="dropdown1">{label}<i class="material-icons right">arrow_drop_down</i></a>',
+                            'submenuTemplate' => "\n<ul class='dropdown-content' id='dropdown1'>\n{items}\n</ul>\n",
+                            'url' => ['#'],
+                            'items' => [
+                                ['label' => 'Голубые Озера', 'url' => ['/ehkskursiya/golubye-ozera']],
+                                ['label' => 'Приэльбрусье', 'url' => ['/ehkskursiya']],
+                                ['label' => 'Чегемские водопады', 'url' => ['/ehkskursiya/chegemskie_vodopady']],
+                                ['label' => 'Чегемские водопады', 'url' => ['/ehkskursiya/habazskie-vodopady']],
+                                ['label' => 'Джилы су', 'url' => ['/ehkskursiya/dzhyly-suu']],
+                                ['label' => 'Эльбрус', 'url' => ['/ehkskursiya/priehlbruse']],
+                            ]
+                        ],
+                        ['label' => 'Походы/Трекинг', 'url' => ['/tracking']],
+                        ['label' => 'Такси', 'url' => ['/taxi']],
+                        ['label' => 'Гостиница', 'url' => ['/hotel']],
+                        ['label' => 'Цены', 'url' => ['/prices']],
+
+                    ],
+                ]
+            );
+            ?>
         </div>
     </nav>
 </div>
+
 <!--mobil-menu-->
-<ul id="dropdown2" class="dropdown-content">
-    <li><a href="/ehkskursiya/golubye-ozera/">Голубые Озера</a></li>
-    <li><a href="/ehkskursiya/">Приэльбрусье</a></li>
-    <li><a href="/ehkskursiya/chegemskie_vodopady/">Чегемские водопады</a></li>
-    <li><a href="/ehkskursiya/habazskie-vodopady/">Хабазские водопады</a></li>
-    <li><a href="/ehkskursiya/dzhyly-suu/">Джилы су</a></li>
-    <li><a href="/ehkskursiya/priehlbruse/">Эльбрус</a></li>
-</ul>
-<ul class="side-nav" id="mobile-demo">
-    <li><a href="/">Инструктор</a></li>
-    <li><a href="#" class="dropdown-button" data-activates="dropdown2">Экскурсии<i class="material-icons right">arrow_drop_down</i></a>
-    </li>
-    <li><a href="/tracking/">Походы/Трекинг</a></li>
-    <li><a href="/taxi/">Такси</a></li>
-    <li><a href="/hotel/">Гостиница</a></li>
-    <li><a href="/prices/">Цены</a></li>
-</ul>
+<?
+echo Menu::widget([
+        'activeCssClass'=>'active',
+        //'activateItems'=> true, // todo
+        'options'=>['class'=>'side-nav', 'id' => 'mobile-demo'],
+        'items' => [
+            ['label' => 'Инструктор', 'url' => ['/']],
+            ['label' => 'Экскурсии',
+                'template' => '<a href="{url}" class="dropdown-button" data-activates="mobile-dropdown1">{label}<i class="material-icons right">arrow_drop_down</i></a>',
+                'submenuTemplate' => "\n<ul class='dropdown-content' id='mobile-dropdown1'>\n{items}\n</ul>\n",
+                'url' => ['#'],
+                'items' => [
+                    ['label' => 'Голубые Озера', 'url' => ['/ehkskursiya/golubye-ozera']],
+                    ['label' => 'Приэльбрусье', 'url' => ['/ehkskursiya']],
+                    ['label' => 'Чегемские водопады', 'url' => ['/ehkskursiya/chegemskie_vodopady']],
+                    ['label' => 'Чегемские водопады', 'url' => ['/ehkskursiya/habazskie-vodopady']],
+                    ['label' => 'Джилы су', 'url' => ['/ehkskursiya/dzhyly-suu']],
+                    ['label' => 'Эльбрус', 'url' => ['/ehkskursiya/priehlbruse']],
+                ]
+            ],
+            ['label' => 'Походы/Трекинг', 'url' => ['/tracking']],
+            ['label' => 'Такси', 'url' => ['/taxi']],
+            ['label' => 'Гостиница', 'url' => ['/hotel']],
+            ['label' => 'Цены', 'url' => ['/prices']],
+
+        ],
+    ]
+);
+?>
 
 <?= $content ?>
 
@@ -169,23 +194,40 @@ AppAsset::register($this);
             </div>
             <div class="col l3 s12">
                 <h5 class="white-text">Услуги</h5>
-                <ul>
-                    <li><a class="white-text" href="/">Инструктор</a></li>
-                    <li><a class="white-text" href="/taxi/">Такси</a></li>
-                    <li><a class="white-text" href="/hotel/">Гостиница</a></li>
-                    <li><a class="white-text" href="/prices/">Цены</a></li>
-                </ul>
+                <?
+                echo Menu::widget([
+                        'activeCssClass'=>'active',
+                        'linkTemplate' => '<a href="{url}" class="white-text"><span>{label}</span></a>',
+                        //'activateItems'=> true, // todo
+                        'items' => [
+                            ['label' => 'Инструктор', 'url' => ['/']],
+                            ['label' => 'Походы/Трекинг', 'url' => ['/tracking']],
+                            ['label' => 'Такси', 'url' => ['/taxi']],
+                            ['label' => 'Гостиница', 'url' => ['/hotel']],
+                            ['label' => 'Цены', 'url' => ['/prices']],
+                        ],
+                    ]
+                );
+                ?>
             </div>
             <div class="col l3 s12">
                 <h5 class="white-text">Экскурсии</h5>
-                <ul>
-                    <li><a class="white-text" href="/ehkskursiya/golubye-ozera/">Голубые Озера</a></li>
-                    <li><a class="white-text" href="/ehkskursiya/">Приэльбрусье</a></li>
-                    <li><a class="white-text" href="/ehkskursiya/chegemskie_vodopady/">Чегемские водопады</a></li>
-                    <li><a class="white-text" href="/ehkskursiya/habazskie-vodopady/">Хабазские водопады</a></li>
-                    <li><a class="white-text" href="/ehkskursiya/dzhyly-suu/">Джилы су</a></li>
-                    <li><a class="white-text" href="/ehkskursiya/priehlbruse/">Эльбрус</a></li>
-                </ul>
+                <?
+                echo Menu::widget([
+                        'activeCssClass'=>'active',
+                        'linkTemplate' => '<a href="{url}" class="white-text"><span>{label}</span></a>',
+                        //'activateItems'=> true, // todo
+                        'items' => [
+                            ['label' => 'Голубые Озера', 'url' => ['/ehkskursiya/golubye-ozera']],
+                            ['label' => 'Приэльбрусье', 'url' => ['/ehkskursiya']],
+                            ['label' => 'Чегемские водопады', 'url' => ['/ehkskursiya/chegemskie_vodopady']],
+                            ['label' => 'Чегемские водопады', 'url' => ['/ehkskursiya/habazskie-vodopady']],
+                            ['label' => 'Джилы су', 'url' => ['/ehkskursiya/dzhyly-suu']],
+                            ['label' => 'Эльбрус', 'url' => ['/ehkskursiya/priehlbruse']],
+                        ]
+                    ]
+                );
+                ?>
             </div>
         </div>
     </div>
