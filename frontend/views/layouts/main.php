@@ -108,7 +108,7 @@ AppAsset::register($this);
                                 ['label' => 'Голубые Озера', 'url' => ['/ehkskursiya/golubye-ozera']],
                                 ['label' => 'Приэльбрусье', 'url' => ['/ehkskursiya']],
                                 ['label' => 'Чегемские водопады', 'url' => ['/ehkskursiya/chegemskie_vodopady']],
-                                ['label' => 'Чегемские водопады', 'url' => ['/ehkskursiya/habazskie-vodopady']],
+                                ['label' => 'Хабазские водопады', 'url' => ['/ehkskursiya/habazskie-vodopady']],
                                 ['label' => 'Джилы су', 'url' => ['/ehkskursiya/dzhyly-suu']],
                                 ['label' => 'Эльбрус', 'url' => ['/ehkskursiya/priehlbruse']],
                             ]
@@ -142,7 +142,7 @@ echo Menu::widget([
                     ['label' => 'Голубые Озера', 'url' => ['/ehkskursiya/golubye-ozera']],
                     ['label' => 'Приэльбрусье', 'url' => ['/ehkskursiya']],
                     ['label' => 'Чегемские водопады', 'url' => ['/ehkskursiya/chegemskie_vodopady']],
-                    ['label' => 'Чегемские водопады', 'url' => ['/ehkskursiya/habazskie-vodopady']],
+                    ['label' => 'Хабазские водопады', 'url' => ['/ehkskursiya/habazskie-vodopady']],
                     ['label' => 'Джилы су', 'url' => ['/ehkskursiya/dzhyly-suu']],
                     ['label' => 'Эльбрус', 'url' => ['/ehkskursiya/priehlbruse']],
                 ]
@@ -221,7 +221,7 @@ echo Menu::widget([
                             ['label' => 'Голубые Озера', 'url' => ['/ehkskursiya/golubye-ozera']],
                             ['label' => 'Приэльбрусье', 'url' => ['/ehkskursiya']],
                             ['label' => 'Чегемские водопады', 'url' => ['/ehkskursiya/chegemskie_vodopady']],
-                            ['label' => 'Чегемские водопады', 'url' => ['/ehkskursiya/habazskie-vodopady']],
+                            ['label' => 'Хабазские водопады', 'url' => ['/ehkskursiya/habazskie-vodopady']],
                             ['label' => 'Джилы су', 'url' => ['/ehkskursiya/dzhyly-suu']],
                             ['label' => 'Эльбрус', 'url' => ['/ehkskursiya/priehlbruse']],
                         ]
