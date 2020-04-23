@@ -34,7 +34,7 @@ class Content extends \yii\db\ActiveRecord
         return [
             [['uuid', 'title', 'content_type_uuid'], 'required', 'message'=> 'Поле не может быть пустым'],
             [['description'], 'string'],
-            [['uuid', 'parent_uuid', 'content_type_uuid'], 'thamtech\uuid\validators\UuidValidator', "message" => 'Недопустимое значение для uuid'],
+            [['uuid', 'parent_uuid', 'content_type_uuid', 'seo_uuid'], 'thamtech\uuid\validators\UuidValidator', "message" => 'Недопустимое значение для uuid'],
             [['title'], 'string', 'max' => 255, "message"=>'Кол-во символов не может быть более 255'],
             [['content_type_uuid'], 'exist',
                 'skipOnError' => false,

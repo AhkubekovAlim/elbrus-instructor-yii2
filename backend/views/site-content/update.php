@@ -3,20 +3,19 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Content */
+/* @var $model common\models\Site */
 
-$this->title = 'Обновить контент: ' . $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Контент', 'url' => ['index']];
+$this->title = 'Update Site: ' . $model->title;
+$this->params['breadcrumbs'][] = ['label' => 'Sites', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="content-update">
+<div class="site-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,
-        'parentId' => $parentId
     ]) ?>
 
 </div>

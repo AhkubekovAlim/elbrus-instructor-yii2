@@ -47,6 +47,14 @@ class m200421_182556_create_contacts_table extends Migration
      */
     public function safeDown()
     {
+        $this->dropIndex(
+            'idx-content-content_type_uuid',
+            'contacts'
+        );
+        $this->dropForeignKey(
+            'fk-contact-contact_type_uuid',
+            'contacts'
+        );
         $this->dropTable('{{%contacts}}');
     }
 }

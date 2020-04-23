@@ -6,15 +6,15 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Contents';
+$this->title = 'Sites';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="content-index">
+<div class="site-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Добавить контент', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Site', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
 
@@ -25,10 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'uuid',
-            'parent_uuid',
             'title',
-            'description:ntext',
-            //'content_type_uuid',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
