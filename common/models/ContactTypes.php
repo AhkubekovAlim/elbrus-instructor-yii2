@@ -5,21 +5,23 @@ namespace common\models;
 use Yii;
 
 /**
- * This is the model class for table "content_types".
+ * This is the model class for table "contact_types".
  *
  * @property int $id
  * @property string $uuid
  * @property string $title
  * @property string $nickname
+ *
+ * @property Contacts[] $contacts
  */
-class ContentTypes extends \yii\db\ActiveRecord
+class ContactTypes extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'content_types';
+        return 'contact_types';
     }
 
     /**
@@ -32,7 +34,7 @@ class ContentTypes extends \yii\db\ActiveRecord
             [['uuid'], 'thamtech\uuid\validators\UuidValidator'],
             [['title', 'nickname'], 'string', 'max' => 100, "message"=>'Кол-во символов не может быть более 100'],
             [['nickname'], 'unique'],
-         ];
+        ];
     }
 
     /**
@@ -46,5 +48,15 @@ class ContentTypes extends \yii\db\ActiveRecord
             'title' => 'Название',
             'nickname' => 'Nickname',
         ];
+    }
+
+    /**
+     * Gets query for [[Contacts]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getContacts()
+    {
+        return $this->hasMany(Contacts::className(), ['contact_type_uuid' => 'uuid']);
     }
 }

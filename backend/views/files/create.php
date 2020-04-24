@@ -3,19 +3,18 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Content */
+/* @var $model common\models\Files */
 
-$this->title = 'Create Content';
-$this->params['breadcrumbs'][] = ['label' => 'Contents', 'url' => ['index']];
+$this->title = 'Create Files';
+$this->params['breadcrumbs'][] = ['label' => 'Files', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="content-create">
+<div class="files-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,
-        'contentTypes' => $contentTypes
     ]) ?>
 
 </div>

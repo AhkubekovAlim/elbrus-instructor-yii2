@@ -2,18 +2,17 @@
 
 namespace backend\controllers;
 
-use common\models\ContentTypes;
 use Yii;
-use common\models\Content;
+use common\models\ContactTypes;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ContentController implements the CRUD actions for Content model.
+ * ContactTypesController implements the CRUD actions for ContactTypes model.
  */
-class ContentController extends Controller
+class ContactTypesController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -31,13 +30,13 @@ class ContentController extends Controller
     }
 
     /**
-     * Lists all Content models.
+     * Lists all ContactTypes models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Content::find(),
+            'query' => ContactTypes::find(),
         ]);
 
         return $this->render('index', [
@@ -46,7 +45,7 @@ class ContentController extends Controller
     }
 
     /**
-     * Displays a single Content model.
+     * Displays a single ContactTypes model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -59,26 +58,25 @@ class ContentController extends Controller
     }
 
     /**
-     * Creates a new Content model.
+     * Creates a new ContactTypes model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Content();
-        $contentTypes = ContentTypes::find()->all();
+        $model = new ContactTypes();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
-            'parentId' => $contentTypes
         ]);
     }
 
     /**
-     * Updates an existing Content model.
+     * Updates an existing ContactTypes model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -87,19 +85,18 @@ class ContentController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $parentId = ContentTypes::find()->all();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
             'model' => $model,
-            'parentId' => $parentId
         ]);
     }
 
     /**
-     * Deletes an existing Content model.
+     * Deletes an existing ContactTypes model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -113,15 +110,15 @@ class ContentController extends Controller
     }
 
     /**
-     * Finds the Content model based on its primary key value.
+     * Finds the ContactTypes model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Content the loaded model
+     * @return ContactTypes the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Content::findOne($id)) !== null) {
+        if (($model = ContactTypes::findOne($id)) !== null) {
             return $model;
         }
 
