@@ -60,12 +60,26 @@ class Content extends \yii\db\ActiveRecord
     }
 
     /**
-     * Gets query for [[ContentTypeUu]].
+     * Gets query for [[ContentType]].
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getContentTypeUu()
+    public function getContentType()
     {
         return $this->hasOne(ContentTypes::className(), ['uuid' => 'content_type_uuid']);
+    }
+
+    public function getContentTypeByNN($nickname = ''){
+        return ContentTypes::findOne(['nickname' => $nickname]);
+    }
+
+    /**
+     * Gets query for [[ContentType]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSeo()
+    {
+        return $this->hasOne(Seo::className(), ['uuid' => 'seo_uuid']);
     }
 }

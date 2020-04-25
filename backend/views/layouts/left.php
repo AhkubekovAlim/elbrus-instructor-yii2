@@ -32,6 +32,7 @@
                 'items' => [
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
                     ['label' => 'Контент', 'icon' => 'file-text', 'url' => ['/content/']],
+                    ['label' => 'Услуги', 'icon' => 'list-alt', 'url' => ['/services/']],
                     ['label' => 'Тип контента', 'icon' => 'paperclip', 'url' => ['/content-types/']],
 //                    ['label' => 'Тип контента', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
 //                    [

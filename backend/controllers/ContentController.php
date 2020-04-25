@@ -15,6 +15,9 @@ use yii\filters\VerbFilter;
  */
 class ContentController extends Controller
 {
+
+    public $contentType = null;
+
     /**
      * {@inheritdoc}
      */
@@ -30,6 +33,15 @@ class ContentController extends Controller
         ];
     }
 
+    public function getContentQuery(){
+        $query =  Content::find();
+        if($this->contentType){
+            $query->joinWith('contentType')
+                ->where('content_types.nickname=:contentTypeNN', ['contentTypeNN' => $this->contentType]);
+        }
+        return $query;
+    }
+
     /**
      * Lists all Content models.
      * @return mixed
@@ -37,7 +49,7 @@ class ContentController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Content::find(),
+            'query' => $this->getContentQuery(),
         ]);
 
         return $this->render('index', [
@@ -67,13 +79,20 @@ class ContentController extends Controller
     {
         $model = new Content();
         $contentTypes = ContentTypes::find()->all();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        $data = Yii::$app->request->post();
+
+        // Автоматическая подстановка contentType, когда он определен
+        if($data && $this->contentType){
+            $data["Content"]["content_type_uuid"] = $model->getContentTypeByNN($this->contentType)->uuid;
+        }
+
+        if ($model->load($data) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
-            'parentId' => $contentTypes
+            'contentTypes' => $contentTypes
         ]);
     }
 
@@ -125,6 +144,6 @@ class ContentController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException('Запрашиваемая страница не найдена.');
     }
 }
