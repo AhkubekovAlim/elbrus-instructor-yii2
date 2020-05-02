@@ -1,0 +1,18 @@
+suite_namespace: frontend\tests\acceptance
+actor: AcceptanceTester
+modules:
+#    enabled:
+#        - WebDriver:
+#            url: http://rest.all2you.ru/
+#            browser: firefox
+#        - Yii2:
+#            part: init
+    enabled:
+    - PhpBrowser
+    - Yii2:
+        part: orm
+        entryScript: index-test.php
+        cleanup: false
+    config:
+      PhpBrowser:
+        url: 'http://rest.all2you.ru/'

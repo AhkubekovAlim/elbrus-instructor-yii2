@@ -17,7 +17,7 @@ class LoginCest
      * @see \Codeception\Module\Yii2::loadFixtures()
      * @return array
      */
-    public function _fixtures()
+/*    public function _fixtures()
     {
         return [
             'user' => [
@@ -26,19 +26,19 @@ class LoginCest
             ]
         ];
     }
-    
+    */
     /**
      * @param FunctionalTester $I
      */
     public function loginUser(FunctionalTester $I)
     {
-        $I->amOnPage('/site/login');
-        $I->fillField('Username', 'erau');
-        $I->fillField('Password', 'password_0');
+        $I->amOnPage('/admin/login');
+        $I->fillField('LoginForm[username]', 'admin');
+        $I->fillField('LoginForm[password]', 'admin');
         $I->click('login-button');
 
-        $I->see('Logout (erau)', 'form button[type=submit]');
-        $I->dontSeeLink('Login');
-        $I->dontSeeLink('Signup');
+        $I->seeLink('Sign out', '/admin/logout');
+//        $I->dontSeeLink('Login');
+        $I->dontSeeLink('Sign in');
     }
 }
