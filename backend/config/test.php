@@ -9,6 +9,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                // TODO выяснить, есть ли нужда в rules
                 '' => 'site/index',
                 '<action>'=>'site/<action>',
                 '<controller:\w+>/<action:\w+>/' => '<controller>/<action>',

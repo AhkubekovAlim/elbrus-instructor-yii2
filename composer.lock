@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9aab39e0f3e3b37e8868d9fe0bb0057f",
+    "content-hash": "3aa31efc96e43d6774fb7e8abd8fbf31",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -50,6 +50,46 @@
             "time": "2019-08-29T08:20:20+00:00"
         },
         {
+            "name": "aminkt/yii2-tree-view-widget",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aminkt/yii2-tree-view-widget.git",
+                "reference": "d35efaaf2b31d68a21d9cf9aa15d6bcf46a79cda"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aminkt/yii2-tree-view-widget/zipball/d35efaaf2b31d68a21d9cf9aa15d6bcf46a79cda",
+                "reference": "d35efaaf2b31d68a21d9cf9aa15d6bcf46a79cda",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": ">=2.0.11"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "aminkt\\widgets\\tree\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Amin Keshavarz",
+                    "email": "ak_1596@yahoo.com"
+                }
+            ],
+            "description": "Tree view widget",
+            "keywords": [
+                "tree",
+                "tree view",
+                "view",
+                "widget",
+                "yii"
+            ],
+            "time": "2018-12-13T23:58:10+00:00"
+        },
+        {
             "name": "bower-asset/bootstrap",
             "version": "v3.4.1",
             "source": {
@@ -64,6 +104,28 @@
             },
             "require": {
                 "bower-asset/jquery": ">=1.9.1,<4.0"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/fancytree",
+            "version": "v2.35.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:mar10/fancytree.git",
+                "reference": "23f3a24c768baa75f13ab1983e4ed898ed617961"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mar10/fancytree/zipball/23f3a24c768baa75f13ab1983e4ed898ed617961",
+                "reference": "23f3a24c768baa75f13ab1983e4ed898ed617961"
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7",
+                "bower-asset/jquery-ui": ">=1.8.6"
             },
             "type": "bower-asset",
             "license": [
@@ -108,6 +170,67 @@
             "license": [
                 "MIT"
             ]
+        },
+        {
+            "name": "bower-asset/jquery-ui",
+            "version": "1.12.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:components/jqueryui.git",
+                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jqueryui/zipball/44ecf3794cc56b65954cc19737234a3119d036cc",
+                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc"
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.6"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/jstree",
+            "version": "3.3.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vakata/jstree.git",
+                "reference": "a7f224265891eee74d85b469006ab461bd430f48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vakata/jstree/zipball/a7f224265891eee74d85b469006ab461bd430f48",
+                "reference": "a7f224265891eee74d85b469006ab461bd430f48"
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.9.1"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/patternfly-bootstrap-treeview",
+            "version": "v2.1.10",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:patternfly/patternfly-bootstrap-treeview.git",
+                "reference": "6893ede419dbfcdc2c333a1c30098c605f980f64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/patternfly/patternfly-bootstrap-treeview/zipball/6893ede419dbfcdc2c333a1c30098c605f980f64",
+                "reference": "6893ede419dbfcdc2c333a1c30098c605f980f64"
+            },
+            "require": {
+                "bower-asset/bootstrap": ">=3.4.1",
+                "bower-asset/jquery": ">=3.4.1"
+            },
+            "type": "bower-asset"
         },
         {
             "name": "bower-asset/punycode",
@@ -292,6 +415,160 @@
             "time": "2014-11-29T13:10:42+00:00"
         },
         {
+            "name": "creocoder/yii2-nested-sets",
+            "version": "0.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/creocoder/yii2-nested-sets.git",
+                "reference": "cb8635a459b6246e5a144f096b992dcc30cf9954"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/creocoder/yii2-nested-sets/zipball/cb8635a459b6246e5a144f096b992dcc30cf9954",
+                "reference": "cb8635a459b6246e5a144f096b992dcc30cf9954",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "creocoder\\nestedsets\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Kochetov",
+                    "email": "creocoder@gmail.com"
+                }
+            ],
+            "description": "The nested sets behavior for the Yii framework",
+            "keywords": [
+                "nested sets",
+                "yii2"
+            ],
+            "time": "2015-01-27T10:53:51+00:00"
+        },
+        {
+            "name": "devgroup/yii2-jstree-widget",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DevGroup-ru/yii2-jstree-widget.git",
+                "reference": "6ae0311254eb757a13fc5c318d6a15544d84b105"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DevGroup-ru/yii2-jstree-widget/zipball/6ae0311254eb757a13fc5c318d6a15544d84b105",
+                "reference": "6ae0311254eb757a13fc5c318d6a15544d84b105",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jstree": "*",
+                "devgroup/yii2-tag-dependency-helper": "~1.5",
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "devgroup\\JsTreeWidget\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Kozhevnikov",
+                    "email": "b37hr3z3n@gmail.com"
+                },
+                {
+                    "name": "Evgeny Dubovitsky",
+                    "email": "flynn068@gmail.com"
+                },
+                {
+                    "name": "Pavel Fedotov",
+                    "email": "fps.06@mail.ru"
+                },
+                {
+                    "name": "Pavel Naumov",
+                    "email": "huggbies@email.su"
+                }
+            ],
+            "description": "jsTree widget for yii2",
+            "keywords": [
+                "jstree",
+                "nested-sets",
+                "tree",
+                "widget",
+                "yii2"
+            ],
+            "time": "2018-05-12T10:59:54+00:00"
+        },
+        {
+            "name": "devgroup/yii2-tag-dependency-helper",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DevGroup-ru/yii2-tag-dependency-helper.git",
+                "reference": "636c5ecceed678d4166b78a3cb3ff3eacd8f5d0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DevGroup-ru/yii2-tag-dependency-helper/zipball/636c5ecceed678d4166b78a3cb3ff3eacd8f5d0d",
+                "reference": "636c5ecceed678d4166b78a3cb3ff3eacd8f5d0d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0",
+                "yiisoft/yii2": "~2.0.6"
+            },
+            "require-dev": {
+                "phpunit/dbunit": "~1.0",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "DevGroup\\TagDependencyHelper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Kozhevnikov",
+                    "email": "b37hr3z3n@gmail.com"
+                },
+                {
+                    "name": "Evgeny Dubovitsky",
+                    "email": "flynn068@gmail.com"
+                },
+                {
+                    "name": "Pavel Fedotov",
+                    "email": "fps.06@mail.ru"
+                },
+                {
+                    "name": "Salikh Fakhrutdinov",
+                    "email": "me@free6k.ru"
+                }
+            ],
+            "description": "Helper for unifying cache tag names with invalidation support in yii2",
+            "keywords": [
+                "cache",
+                "yii2"
+            ],
+            "time": "2016-09-04T14:52:27+00:00"
+        },
+        {
             "name": "dmstr/yii2-adminlte-asset",
             "version": "2.6.2",
             "source": {
@@ -414,6 +691,53 @@
             "time": "2019-10-30T14:39:59+00:00"
         },
         {
+            "name": "dvizh/yii2-tree",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dvizh/yii2-tree.git",
+                "reference": "92c8a81c3654e6e0db4e2fd938f6c7297dbe44af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dvizh/yii2-tree/zipball/92c8a81c3654e6e0db4e2fd938f6c7297dbe44af",
+                "reference": "92c8a81c3654e6e0db4e2fd938f6c7297dbe44af",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "dvizh\\tree\\": "src\\"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Ilya Pistol",
+                    "email": "admin@nethammer.ru"
+                }
+            ],
+            "description": "it's a module to build tree by model",
+            "homepage": "https://github.com/dvizh/yii2-tree",
+            "keywords": [
+                "dvizh",
+                "module",
+                "tree",
+                "widget",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2019-06-27T11:09:03+00:00"
+        },
+        {
             "name": "egulias/email-validator",
             "version": "2.1.17",
             "source": {
@@ -470,6 +794,94 @@
                 "validator"
             ],
             "time": "2020-02-13T22:36:52+00:00"
+        },
+        {
+            "name": "execut/yii2-base",
+            "version": "1.13.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/execut/yii2-base.git",
+                "reference": "ca5dc28f226d0f599edc5fed08b595cc4c036321"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/execut/yii2-base/zipball/ca5dc28f226d0f599edc5fed08b595cc4c036321",
+                "reference": "ca5dc28f226d0f599edc5fed08b595cc4c036321",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": ">=2.0.13",
+                "yiisoft/yii2-jui": "@dev"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "execut\\yii\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "eXeCUT"
+                }
+            ],
+            "description": "My base classes for yii2",
+            "homepage": "https://github.com/execut/yii2-base",
+            "keywords": [
+                "yii2"
+            ],
+            "time": "2020-02-10T14:54:22+00:00"
+        },
+        {
+            "name": "execut/yii2-widget-bootstraptreeview",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/execut/yii2-widget-bootstraptreeview.git",
+                "reference": "ffba92bd634505fc76ec7632113dd5901a4efaad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/execut/yii2-widget-bootstraptreeview/zipball/ffba92bd634505fc76ec7632113dd5901a4efaad",
+                "reference": "ffba92bd634505fc76ec7632113dd5901a4efaad",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/patternfly-bootstrap-treeview": "@dev",
+                "execut/yii2-base": "*",
+                "yiisoft/yii2-jui": "@dev"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "execut\\widget\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "eXeCUT"
+                }
+            ],
+            "description": "Bootstrap Tree View widget wrapper for yii2",
+            "homepage": "https://github.com/execut/yii2-widget-bootstraptreeview",
+            "keywords": [
+                "bootstrap",
+                "extension",
+                "form",
+                "input",
+                "jquery",
+                "plugin",
+                "tree",
+                "yii2"
+            ],
+            "time": "2020-01-20T13:56:28+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -567,6 +979,218 @@
             "time": "2016-10-24T15:52:54+00:00"
         },
         {
+            "name": "kartik-v/yii2-dialog",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-dialog.git",
+                "reference": "c38616d719f52530749457c022ca6134d0ad31ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-dialog/zipball/c38616d719f52530749457c022ca6134d0ad31ce",
+                "reference": "c38616d719f52530749457c022ca6134d0ad31ce",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-krajee-base": ">=2.0.0"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\dialog\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "An asset bundle for bootstrap3-dialog for Yii 2.0 framework.",
+            "homepage": "https://github.com/kartik-v/yii2-dialog",
+            "keywords": [
+                "alert",
+                "bootstrap",
+                "dialog",
+                "extension",
+                "modal",
+                "yii2"
+            ],
+            "time": "2018-10-09T08:08:51+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-krajee-base",
+            "version": "v2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-krajee-base.git",
+                "reference": "9ddb662bdf49fdb671a90853912a40418a26a0dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/9ddb662bdf49fdb671a90853912a40418a26a0dd",
+                "reference": "9ddb662bdf49fdb671a90853912a40418a26a0dd",
+                "shasum": ""
+            },
+            "suggest": {
+                "yiisoft/yii2-bootstrap": "for Krajee extensions to work with Bootstrap 3.x version",
+                "yiisoft/yii2-bootstrap4": "for Krajee extensions to work with Bootstrap 4.x version"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\base\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Base library and foundation components for all Yii2 Krajee extensions.",
+            "homepage": "https://github.com/kartik-v/yii2-krajee-base",
+            "keywords": [
+                "base",
+                "extension",
+                "foundation",
+                "krajee",
+                "widget",
+                "yii2"
+            ],
+            "time": "2019-03-13T17:14:54+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-tree-manager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-tree-manager.git",
+                "reference": "35e907e5b60a59d1a1de3dee5ff6262221a6cb73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-tree-manager/zipball/35e907e5b60a59d1a1de3dee5ff6262221a6cb73",
+                "reference": "35e907e5b60a59d1a1de3dee5ff6262221a6cb73",
+                "shasum": ""
+            },
+            "require": {
+                "creocoder/yii2-nested-sets": ">=0.9",
+                "kartik-v/yii2-dialog": ">=1.0",
+                "kartik-v/yii2-widget-activeform": ">=1.5.7"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\tree\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "An enhanced tree management module with tree node selection and manipulation using nested sets.",
+            "homepage": "https://github.com/kartik-v/yii2-tree-manager",
+            "keywords": [
+                "ajax",
+                "bootstrap",
+                "hierarchy",
+                "jquery",
+                "krajee",
+                "nested",
+                "nestedset",
+                "set",
+                "tree",
+                "treeview"
+            ],
+            "time": "2019-10-10T16:35:58+00:00"
+        },
+        {
+            "name": "kartik-v/yii2-widget-activeform",
+            "version": "v1.5.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-widget-activeform.git",
+                "reference": "02baee5e06a5dfbc94b71dc8c13ca87789716b29"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-activeform/zipball/02baee5e06a5dfbc94b71dc8c13ca87789716b29",
+                "reference": "02baee5e06a5dfbc94b71dc8c13ca87789716b29",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-krajee-base": ">=1.9.8"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\form\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Enhanced Yii2 active-form and active-field with full bootstrap styling support (sub repo split from yii2-widgets).",
+            "homepage": "https://github.com/kartik-v/yii2-widget-activeform",
+            "keywords": [
+                "activefield",
+                "activeform",
+                "extension",
+                "field",
+                "form",
+                "widget",
+                "yii2"
+            ],
+            "time": "2019-02-23T19:45:01+00:00"
+        },
+        {
             "name": "kmarenov/yii2-instagram-widget",
             "version": "1.0.1",
             "source": {
@@ -608,6 +1232,61 @@
                 "yii2"
             ],
             "time": "2015-12-07T21:13:05+00:00"
+        },
+        {
+            "name": "kr0lik/yii2-tree-manager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kr0lik/yii2-tree-manager.git",
+                "reference": "b1b2213474e603a232de9df9d11a98a023d01795"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kr0lik/yii2-tree-manager/zipball/b1b2213474e603a232de9df9d11a98a023d01795",
+                "reference": "b1b2213474e603a232de9df9d11a98a023d01795",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/fancytree": "^2.35",
+                "php": ">=7.1",
+                "yiisoft/yii2": "^2.0",
+                "yiisoft/yii2-bootstrap": "^2.0",
+                "yiisoft/yii2-jui": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "kr0lik\\tree\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "krolik",
+                    "email": "krolik@yandex.ru"
+                }
+            ],
+            "description": "Yii2 widget for manage tree using fancytree",
+            "keywords": [
+                "ajax",
+                "bootstrap",
+                "fancytree",
+                "jQueryUI",
+                "jquery",
+                "lazy",
+                "ltree",
+                "nestedsets",
+                "postgres",
+                "postgresql",
+                "tree",
+                "treemanager",
+                "yii2"
+            ],
+            "time": "2020-04-30T20:24:53+00:00"
         },
         {
             "name": "moontoast/math",
@@ -1463,6 +2142,52 @@
                 "yii2"
             ],
             "time": "2019-07-16T13:22:30+00:00"
+        },
+        {
+            "name": "yiisoft/yii2-jui",
+            "version": "2.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-jui.git",
+                "reference": "ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed",
+                "reference": "ce45c16d4fbbe7d1c516d8d0e8311e07f6138eed",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery-ui": "~1.12.1",
+                "yiisoft/yii2": "~2.0.4"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\jui\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Qiang Xue",
+                    "email": "qiang.xue@gmail.com"
+                }
+            ],
+            "description": "The Jquery UI extension for the Yii framework",
+            "keywords": [
+                "jQuery UI",
+                "yii2"
+            ],
+            "time": "2017-11-25T15:32:29+00:00"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -4989,7 +5714,14 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "execut/yii2-widget-bootstraptreeview": 20,
+        "kartik-v/yii2-tree-manager": 20,
+        "aminkt/yii2-tree-view-widget": 20,
+        "dvizh/yii2-tree": 20,
+        "devgroup/yii2-jstree-widget": 20,
+        "kr0lik/yii2-tree-manager": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

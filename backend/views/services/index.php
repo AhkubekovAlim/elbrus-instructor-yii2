@@ -2,9 +2,15 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use common\helpers\HtmlHelper;
 
-/* @var $this yii\web\View */
-/* @var $dataProvider yii\data\ActiveDataProvider */
+use execut\widget\TreeView;
+use yii\web\JsExpression;
+/**
+ * @var $this yii\web\View
+ * @var $dataProvider yii\data\ActiveDataProvider
+ * @var $tree array
+ */
 
 $this->title = 'Услуги';
 $this->params['breadcrumbs'][] = $this->title;
@@ -17,21 +23,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Создать услугу', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            'id',
-            'uuid',
-            'parent_uuid',
-            'title',
-            'description:ntext',
-            //'content_type_uuid',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+    <? if($tree){ ?>
+        <div>
+            <?= HtmlHelper::getCollapseTree($tree, Yii::$app->request->url); ?>
+        </div>
+    <? } ?>
 
 
 </div>

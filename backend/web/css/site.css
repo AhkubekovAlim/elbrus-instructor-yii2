@@ -119,3 +119,16 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+/*TeamA styles*/
+.collapse ul.list-group {
+    margin-top: 10px;
+}
+
+.collapse-btn{
+    cursor: pointer;
+    display: inline-block;
+}
+.collapse-btn .icon{
+    margin-right: 10px;
+}

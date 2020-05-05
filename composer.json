@@ -14,13 +14,19 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.6.0",
+        "php": ">=7.1.0",
         "yiisoft/yii2": "~2.0.14",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "dmstr/yii2-adminlte-asset": "*",
         "thamtech/yii2-uuid": "^1.2",
-        "kmarenov/yii2-instagram-widget": "*"
+        "kmarenov/yii2-instagram-widget": "*",
+        "execut/yii2-widget-bootstraptreeview": "dev-master",
+        "kartik-v/yii2-tree-manager": "@dev",
+        "aminkt/yii2-tree-view-widget": "@dev",
+        "dvizh/yii2-tree": "@dev",
+        "devgroup/yii2-jstree-widget": "@dev",
+        "kr0lik/yii2-tree-manager": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

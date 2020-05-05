@@ -3,9 +3,13 @@
 namespace backend\controllers;
 
 use common\models\ContentTypes;
+use kartik\form\ActiveForm;
+use kr0lik\tree\TreeManagerAction;
 use Yii;
 use common\models\Content;
 use yii\data\ActiveDataProvider;
+use yii\db\ActiveQuery;
+use yii\helpers\Html;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -48,12 +52,16 @@ class ContentController extends Controller
      */
     public function actionIndex()
     {
+        $query = $this->getContentQuery();
         $dataProvider = new ActiveDataProvider([
-            'query' => $this->getContentQuery(),
+            'query' => $query,
         ]);
+
+        $tree =  $this->getTree($query);
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
+            'tree' => $tree,
         ]);
     }
 
@@ -145,5 +153,36 @@ class ContentController extends Controller
         }
 
         throw new NotFoundHttpException('Запрашиваемая страница не найдена.');
+    }
+
+    /**
+     * Полуечние дерева категорий
+     * @param ActiveQuery $query
+     * @return array
+     */
+    public function getTree(ActiveQuery $query){
+        $sections = $query->asArray()->all();
+        $tree = self::parseTree($sections);
+        return $tree;
+    }
+
+    /**
+     * Формирование дерева для execut\widget\TreeView;
+     * @param $items
+     * @param null $uidParent
+     * @return array
+     */
+    static function parseTree($items,$uidParent = null)
+    {
+        $result = [];
+        foreach ($items as $item) {
+            if ($item['parent_uuid'] == $uidParent) {
+                $item['text'] = $item['title'];
+                $item['nodes'] = self::parseTree($items, $item['uuid']);
+                $result[] = $item;
+            }
+        }
+
+        return $result;
     }
 }
