@@ -6,6 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model common\models\Content */
 /* @var $form yii\widgets\ActiveForm */
+/* @var $contentTypes */
 ?>
 
 <div class="content-form">

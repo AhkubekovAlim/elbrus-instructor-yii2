@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "content".
@@ -81,5 +82,45 @@ class Content extends \yii\db\ActiveRecord
     public function getSeo()
     {
         return $this->hasOne(Seo::className(), ['uuid' => 'seo_uuid']);
+    }
+
+    /**
+     * Полуечние дерева элементов
+     * @param ActiveQuery $query
+     * @return array
+     */
+    public static function getTree(ActiveQuery $query){
+        $elements = $query->asArray()->all();
+        $tree = self::parseTree($elements);
+        return $tree;
+    }
+
+    /**
+     * Формирование дерева для execut\widget\TreeView;
+     * @param $items
+     * @param null $uidParent
+     * @return array
+     */
+    static function parseTree($items,$uidParent = null)
+    {
+        $result = [];
+        foreach ($items as $item) {
+            if ($item['parent_uuid'] == $uidParent) {
+                $item['nodes'] = self::parseTree($items, $item['uuid']);
+                $result[] = $item;
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * Возвращает родительскую категорию
+     * @param $uuid
+     * @return array|null|\yii\db\ActiveRecord
+     */
+    public static function findParent($uuid){
+        $parentModel = Content::find()->where(['uuid' => $uuid])->one();
+        return $parentModel;
     }
 }

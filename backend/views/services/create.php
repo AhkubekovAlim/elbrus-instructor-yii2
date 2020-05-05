@@ -4,6 +4,8 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Content */
+/* @var $contentTypes */
+/* @var $parentTitle */
 
 $this->title = 'Создание услуги';
 $this->params['breadcrumbs'][] = ['label' => 'Услуги', 'url' => ['index']];
@@ -15,7 +17,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
-        'contentTypes' => $contentTypes
+        'contentTypes' => $contentTypes,
+        'parentTitle' => $parentTitle
     ]) ?>
 
 </div>

@@ -57,7 +57,7 @@ class ContentController extends Controller
             'query' => $query,
         ]);
 
-        $tree =  $this->getTree($query);
+        $tree = Content::getTree($query);
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
@@ -73,8 +73,13 @@ class ContentController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+        if($model->parent_uuid) {
+            $parentModel = Content::findParent($model->parent_uuid);
+            $model->parent_uuid = $parentModel->title;
+        }
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
         ]);
     }
 
@@ -88,6 +93,8 @@ class ContentController extends Controller
         $model = new Content();
         $contentTypes = ContentTypes::find()->all();
         $data = Yii::$app->request->post();
+        $getData = Yii::$app->request->get();
+        $parent = null;
 
         // Автоматическая подстановка contentType, когда он определен
         if($data && $this->contentType){
@@ -98,9 +105,18 @@ class ContentController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
+        // Если указан id родительского элемента
+        if($getData['parent_id']){
+            $parent = Content::findOne($getData['parent_id']);
+            if($parent){
+                $model->parent_uuid = $parent->uuid;
+            }
+        }
+
         return $this->render('create', [
             'model' => $model,
-            'contentTypes' => $contentTypes
+            'contentTypes' => $contentTypes,
+            'parentTitle' => $parent ? $parent->title : '',
         ]);
     }
 
@@ -114,14 +130,22 @@ class ContentController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $parentId = ContentTypes::find()->all();
+        $contentTypes = ContentTypes::find()->all();
+        $parent = null;
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
+        // Если указан id родительского элемента
+        if($model->parent_uuid){
+            $parent = Content::findParent($model->parent_uuid);
+        }
+
         return $this->render('update', [
             'model' => $model,
-            'parentId' => $parentId
+            'contentTypes' => $contentTypes,
+            'parentTitle' => $parent ? $parent->title : '',
         ]);
     }
 
@@ -153,36 +177,5 @@ class ContentController extends Controller
         }
 
         throw new NotFoundHttpException('Запрашиваемая страница не найдена.');
-    }
-
-    /**
-     * Полуечние дерева категорий
-     * @param ActiveQuery $query
-     * @return array
-     */
-    public function getTree(ActiveQuery $query){
-        $sections = $query->asArray()->all();
-        $tree = self::parseTree($sections);
-        return $tree;
-    }
-
-    /**
-     * Формирование дерева для execut\widget\TreeView;
-     * @param $items
-     * @param null $uidParent
-     * @return array
-     */
-    static function parseTree($items,$uidParent = null)
-    {
-        $result = [];
-        foreach ($items as $item) {
-            if ($item['parent_uuid'] == $uidParent) {
-                $item['text'] = $item['title'];
-                $item['nodes'] = self::parseTree($items, $item['uuid']);
-                $result[] = $item;
-            }
-        }
-
-        return $result;
     }
 }

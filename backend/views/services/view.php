@@ -32,9 +32,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'uuid',
             'parent_uuid',
+            //'content_type_uuid',
             'title',
             'description:ntext',
-            //'content_type_uuid',
+            'seo.title',
+            'seo.description',
+            'seo.keywords',
         ],
     ]) ?>
 

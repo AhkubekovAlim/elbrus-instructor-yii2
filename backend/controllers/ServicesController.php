@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use common\models\Content;
+use yii\db\ActiveRecord;
 use yii\web\NotFoundHttpException;
 
 /**
@@ -23,7 +24,8 @@ class ServicesController extends ContentController
      */
     protected function findModel($id)
     {
-        if (($model = Content::find()->with('seo')->where(['id' => $id])->one()) !== null) {
+        $model = Content::find()->with('seo')->where(['id' => $id])->one();
+        if ($model !== null) {
             return $model;
         }
 

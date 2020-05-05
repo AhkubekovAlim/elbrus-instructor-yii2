@@ -25,9 +25,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <? if($tree){ ?>
         <div>
-            <?= HtmlHelper::getCollapseTree($tree, Yii::$app->request->url); ?>
+            <?= HtmlHelper::getCollapseTree($tree, '/admin/services'); ?>
         </div>
     <? } ?>
-
 
 </div>

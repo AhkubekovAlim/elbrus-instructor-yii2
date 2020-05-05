@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Content */
+/* @var $contentTypes */
 
 $this->title = 'Create Content';
 $this->params['breadcrumbs'][] = ['label' => 'Contents', 'url' => ['index']];
